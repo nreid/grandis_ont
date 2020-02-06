@@ -24,9 +24,9 @@ OUTFILE=male.fasta.gz
 
 bioawk=~/bin/bioawk/bioawk
 
-# print seqs as fasta
-for file in $INDIR/*fastq; do $bioawk -c fastx '{print $name "\n" $seq}' $file; done | \
-gzip >$OUTDIR/$OUTFILE
+# # print seqs as fasta
+# for file in $INDIR/*fastq; do $bioawk -c fastx '{print $name "\n" $seq}' $file; done | \
+# gzip >$OUTDIR/$OUTFILE
 
 
 # make blast database
@@ -36,6 +36,6 @@ makeblastdb -in - \
 -dbtype nucl \
 -title male.blastdb \
 -parse_seqids \
-
+-out $OUTDIR/male.blastdb
 
 
