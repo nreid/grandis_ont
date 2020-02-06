@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --job-name=untar_1
+#SBATCH --job-name=makefastas
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH -c 1
