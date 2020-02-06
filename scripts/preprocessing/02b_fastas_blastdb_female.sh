@@ -31,7 +31,7 @@ bioawk=~/bin/bioawk/bioawk
 
 # make blast database
 
-gzip -c $OUTDIR/$OUTFILE | \
+zcat $OUTDIR/$OUTFILE | \
 makeblastdb -in - \
 -dbtype nucl \
 -title female.blastdb \
