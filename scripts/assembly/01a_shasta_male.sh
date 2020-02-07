@@ -15,13 +15,13 @@ module load shasta/0.2.0
 
 FASTA=../../results/fastas/male.fasta
 
-OUTDIR=../../shasta_male
+OUTDIR=../../results/shasta_male
 rm -r $OUTDIR
 
 # shasta requires uncompressed fasta
 shasta \
 --input $FASTA  \
- --assemblyDirectory $OUTDIR \
+--assemblyDirectory $OUTDIR \
 --Reads.minReadLength 500 \
 --memoryMode anonymous \
 --memoryBacking 4K \
