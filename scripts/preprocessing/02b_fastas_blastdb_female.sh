@@ -39,4 +39,3 @@ makeblastdb -in - \
 -out $OUTDIR/female.blastdb
 
 
-
