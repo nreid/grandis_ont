@@ -23,8 +23,13 @@ rm -r $OUTDIR
 # in this run, I modify the _guppy3 run and lower the required number of markers, --Align.minAlignedMarkerCount to 50 from the default 100
 	# per this github issue: https://github.com/chanzuckerberg/shasta/issues/61
 	# 100 markers ~ 3kb sequence, so 3kb winds up being the minimum length of usable sequence
+	# this should bring it lower, and use more data. 
 # I am also increasing the iteration count for the minhash algorithm from 10 to 20
 	# this should find more read overlaps. 
+
+# THIS WAS A DISASTER:
+
+	# N50 ~ 636,814 (previous runs had N50 ~ 1.3mb)
 
 shasta \
 --input $FASTA  \
