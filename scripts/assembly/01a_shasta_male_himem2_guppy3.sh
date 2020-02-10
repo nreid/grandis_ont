@@ -26,4 +26,4 @@ shasta \
 --memoryMode anonymous \
 --memoryBacking 4K \
 --threads 36 \
---Assembly.consensusCaller guppy-3.0.5-a
+--Assembly.consensusCaller Bayesian:guppy-3.0.5-a
