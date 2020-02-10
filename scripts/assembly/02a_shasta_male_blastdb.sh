@@ -28,3 +28,10 @@ makeblastdb -in $INFILE \
 -parse_seqids \
 -out $OUTDIR/shasta_male.blastdb
 
+# to search: 
+
+# blastn -db db.name -query query.fasta -out results.out
+
+# to extract a sequence from the database:
+
+# blastdbcmd -db grandis_ont/results/fastas/male.blastdb -entry d69f42fe-4e03-4710-8ae5-05c2d8b51bf2 -outfmt %f -out amhy_male_1hit.fasta
