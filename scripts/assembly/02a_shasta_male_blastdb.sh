@@ -22,7 +22,7 @@ OUTDIR=../../results/shasta_male_himem2-blastdb
 mkdir -p $OUTDIR
 
 
-makeblastdb -in - \
+makeblastdb -in $INFILE \
 -dbtype nucl \
 -title shasta_male.blastdb \
 -parse_seqids \
