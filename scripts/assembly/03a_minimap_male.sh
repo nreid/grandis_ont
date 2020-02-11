@@ -26,5 +26,5 @@ minimap2 \
 -ax map-ont \
 -t 24 \
 $GENOME \
-$FASTQ >male.sam
+$FASTQ >$OUTDIR/$OUTFILE
 
