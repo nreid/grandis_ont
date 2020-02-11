@@ -17,9 +17,14 @@ module load minimap2/2.17
 GENOME=../../results/shasta_male_himem2/Assembly.fasta
 FASTQ=../../results/fastqs/male.fastq.gz
 
+OUTDIR=../../results/mapped_reads
+mkdir -p $OUTDIR
+
+OUTFILE=male.sam
+
 minimap2 \
 -ax map-ont \
 -t 24 \
 $GENOME \
-$FASTQ
+$FASTQ >male.sam
 
