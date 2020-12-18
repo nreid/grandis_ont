@@ -1,13 +1,13 @@
 #!/bin/bash
-#SBATCH --job-name=ngmlr_f
-#SBATCH -n 1
+#SBATCH --job-name=map_reads
 #SBATCH -N 1
+#SBATCH -n 1
 #SBATCH -c 15
-#SBATCH --mem=15G
 #SBATCH --partition=general
 #SBATCH --qos=general
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=first.last@uconn.edu
+#SBATCH --mem=25G
+#SBATCH --mail-user=noah.reid@uconn.edu
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
 
@@ -15,8 +15,7 @@ hostname
 date
 
 # load software
-
-module load ngmlr/0.2.7
+module load minimap2/2.17
 module load samtools/1.10
 
 # input/output dirs, files
@@ -28,11 +27,11 @@ mkdir -p $OUTDIR
 
 GENOME=../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna
 
-# run ngmlr
+# run minimap2
 
 cat $(find $INDIR -name "*fastq" | sort) | \
-ngmlr -t 10 -r $GENOME -q /dev/stdin -o stdout -x ont | \
+minimap2 -ax map-ont -t 10 $GENOME - | \
 samtools sort -@ 5 -T female -O BAM \
->$OUTDIR/female.bam
+>$OUTDIR/female.minimap.bam
 
-samtools index $OUTDIR/female.bam
+samtools index $OUTDIR/female.minimap.bam
