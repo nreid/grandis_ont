@@ -2,8 +2,8 @@
 #SBATCH --job-name=ngmlr_f
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -c 10
-#SBATCH --mem=5G
+#SBATCH -c 15
+#SBATCH --mem=15G
 #SBATCH --partition=general
 #SBATCH --qos=general
 #SBATCH --mail-type=ALL
@@ -18,6 +18,7 @@ date
 # load software
 
 module load ngmlr/0.2.7
+module load samtools/1.10
 
 # input/output dirs, files
 
@@ -31,4 +32,8 @@ GENOME=../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna
 # run ngmlr
 
 cat $(find $INDIR -name "*fastq" | sort) | \
-ngmlr -t 4 -r $GENOME -q /dev/stdin -o $OUTDIR/female.sam -x ont
+ngmlr -t 10 -r $GENOME -q /dev/stdin -o stdout -x ont | \
+samtools sort -@ 5 -T female -O BAM \
+>$OUTDIR/female.bam
+
+samtools index $OUTDIR/female.bam
