@@ -31,7 +31,7 @@ GENOME=../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna
 # run ngmlr
 
 cat $(find $INDIR -name "*fastq" | sort) | \
-ngmlr -t 10 -r $GENOME -q /dev/stdin -o stdout -x ont | \
+ngmlr --bam-fix -t 10 -r $GENOME -q /dev/stdin -o stdout -x ont | \
 samtools sort -@ 5 -T male -O BAM \
 >$OUTDIR/male.bam
 
