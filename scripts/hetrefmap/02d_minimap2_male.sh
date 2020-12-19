@@ -30,7 +30,7 @@ GENOME=../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna
 # run minimap2
 
 cat $(find $INDIR -name "*fastq" | sort) | \
-minimap2 -ax map-ont -t 10 $GENOME - | \
+minimap2 -c --MD -ax map-ont -t 10 $GENOME - | \
 samtools sort -@ 5 -T male -O BAM \
 >$OUTDIR/male.minimap.bam
 
