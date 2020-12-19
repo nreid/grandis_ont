@@ -17,7 +17,7 @@ date
 # load software
 
 module load ngmlr/0.2.7
-module load samtools/1.10
+module load samtools/1.9
 
 # input/output dirs, files
 
