@@ -16,7 +16,7 @@ date
 
 # load software
 module load minimap2/2.17
-module load samtools/1.10
+module load samtools/1.9
 
 # input/output dirs, files
 
