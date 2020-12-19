@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=minimap_female
+#SBATCH --job-name=sniffles_female
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 15
@@ -28,7 +28,7 @@ mkdir -p $OUTDIR
 
 
 # run sniffles
-$SNIFFLES -m $INFILE -v $OUTDIR/female_minimap.vcf
+$SNIFFLES -t 15 -m $INFILE -v $OUTDIR/female_minimap.vcf
 
 # compress and index
 bgzip $OUTDIR/female_minimap.vcf
