@@ -35,4 +35,4 @@ ngmlr --bam-fix -t 10 -r $GENOME -q /dev/stdin -o stdout -x ont | \
 samtools sort -@ 5 -T male -O BAM \
 >$OUTDIR/male.bam
 
-samtools index $OUTDIR/male.bam
+samtools index $OUTDIR/male.ngmlr.bam

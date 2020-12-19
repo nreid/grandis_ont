@@ -17,7 +17,7 @@ date
 # load software
 
 module load ngmlr/0.2.7
-module load samtools/1.10
+module load samtools/1.9
 
 # input/output dirs, files
 
@@ -35,4 +35,4 @@ ngmlr --bam-fix -t 10 -r $GENOME -q /dev/stdin -o stdout -x ont | \
 samtools sort -@ 5 -T female -O BAM \
 >$OUTDIR/female.bam
 
-samtools index $OUTDIR/female.bam
+samtools index $OUTDIR/female.ngmlr.bam

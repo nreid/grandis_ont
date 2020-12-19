@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=map_reads
+#SBATCH --job-name=minimap_male
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 15
