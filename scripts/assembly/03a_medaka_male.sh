@@ -18,6 +18,7 @@ date
 # load software
 
 # installed in user home
+source ~/miniconda3/etc/profile.d/conda.sh 
 conda activate medaka
 
 # input/output files, directories
