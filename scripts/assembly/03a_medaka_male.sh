@@ -25,7 +25,7 @@ conda activate medaka
 NPROC=$(nproc)
 FASTA=../../results/fastas/male.fasta
 DRAFT=../../results/shasta_male_v0.7.0/Assembly.fasta
-OUTDIR=medaka_consensus_male
+OUTDIR=../../results/shasta_male_v0.7.0/medaka_consensus
 
 # run medaka
 	# guppy 3.2.6
