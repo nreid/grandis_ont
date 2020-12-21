@@ -31,6 +31,6 @@ GENOME=../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna
 # run minimap2
 minimap2 -c --MD -ax map-ont -t 10 $GENOME $INDIR/Assembly.fasta | \
 samtools sort -@ 5 -T $OUTDIR/male.assembly.minimap -O BAM \
->$OUTDIR/male.minimap.bam
+>$OUTDIR/male.assembly.minimap.bam
 
-samtools index $OUTDIR/male.minimap.bam
+samtools index $OUTDIR/male.assembly.minimap.bam
