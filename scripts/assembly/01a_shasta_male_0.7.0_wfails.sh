@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=shasta_v0.7.0_male_addfails
+#SBATCH --job-name=shasta_v0.7.0_male_wfails
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 36
