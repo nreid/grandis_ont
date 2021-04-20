@@ -3,10 +3,10 @@
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 36
-#SBATCH --partition=himem2
+#SBATCH --partition=himem
 #SBATCH --qos=himem
 #SBATCH --mail-type=ALL
-#SBATCH --mem=900G
+#SBATCH --mem=500G
 #SBATCH --mail-user=noah.reid@uconn.edu
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
