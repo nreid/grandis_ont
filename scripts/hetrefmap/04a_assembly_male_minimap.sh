@@ -22,7 +22,7 @@ module load samtools/1.9
 
 # this assembly has decent N50
 # INDIR=/projects/EBP/CBC/Reid_promethion/grandis_ont/results/shasta_male_himem2
-INDIR=/projects/EBP/CBC/Reid_promethion/grandis_ont/results/shasta_male_v0.7.0
+INDIR=/projects/EBP/CBC/Reid_promethion/grandis_ont/results/shasta_male_v0.7.0/medaka_consensus
 
 OUTDIR=../../results/hetrefmap/
 mkdir -p $OUTDIR
@@ -30,7 +30,7 @@ mkdir -p $OUTDIR
 GENOME=../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna
 
 # run minimap2
-minimap2 -c --MD -ax map-ont -t 10 $GENOME $INDIR/Assembly.fasta | \
+minimap2 -c --MD -ax map-ont -t 10 $GENOME $INDIR/consensus.fasta | \
 samtools sort -@ 5 -T $OUTDIR/male.assembly.minimap -O BAM \
 >$OUTDIR/male.assembly.minimap.bam
 
