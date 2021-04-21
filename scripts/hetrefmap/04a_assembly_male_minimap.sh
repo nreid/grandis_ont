@@ -21,7 +21,8 @@ module load samtools/1.9
 # input/output dirs, files
 
 # this assembly has decent N50
-INDIR=/projects/EBP/CBC/Reid_promethion/grandis_ont/results/shasta_male_himem2
+# INDIR=/projects/EBP/CBC/Reid_promethion/grandis_ont/results/shasta_male_himem2
+INDIR=/projects/EBP/CBC/Reid_promethion/grandis_ont/results/shasta_male_v0.7.0
 
 OUTDIR=../../results/hetrefmap/
 mkdir -p $OUTDIR
