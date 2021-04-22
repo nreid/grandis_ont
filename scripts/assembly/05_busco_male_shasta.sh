@@ -37,4 +37,4 @@ busco \
 	-l $DATABASE \
 	-m genome
 
-
+mv $OUTPREFIX $OUTDIR
