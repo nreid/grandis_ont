@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=busco_flye
+#SBATCH --job-name=busco_shasta_male
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH -c 1
@@ -25,7 +25,11 @@ OUTPREFIX=male_shasta
 OUTDIR=../../results/busco
 mkdir -p $OUTDIR
 
-export AUGUSTUS_CONFIG_PATH=../../augustus/config 
+# augustus config folder must exist in a writeable location. copy it. 
+mkdir -p ../../results/augustus/
+cp -r /isg/shared/apps/augustus/3.2.3/config ../../results/augustus/config
+
+export AUGUSTUS_CONFIG_PATH=../../results/augustus/config
 
 busco \
 	-i $GENOME \
