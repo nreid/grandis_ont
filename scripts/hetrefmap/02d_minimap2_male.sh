@@ -35,3 +35,5 @@ samtools sort -@ 5 -T $OUTDIR/male.minimap -O BAM \
 >$OUTDIR/male.minimap.bam
 
 samtools index $OUTDIR/male.minimap.bam
+
+paftools.js sam2paf <(samtools view -h $OUTDIR/male.assembly.minimap.bam) | gzip >$OUTDIR/male.assembly.minimap.paf.gz

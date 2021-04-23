@@ -8,10 +8,9 @@
 	- centrifuge
 
 ## assembly
-	- shasta
-	- flye
+	- shasta, flye
 	- map reads to assembly
-	- racon, medakda, get polish statistics
+	- racon, medaka, get polish statistics
 	- busco
 	- quast
 	- purge haplotigs?

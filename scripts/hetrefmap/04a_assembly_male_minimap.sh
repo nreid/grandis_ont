@@ -30,8 +30,11 @@ mkdir -p $OUTDIR
 GENOME=../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna
 
 # run minimap2
-minimap2 -c --MD -ax map-ont -t 10 $GENOME $INDIR/consensus.fasta | \
+minimap2 -c --MD -a -x asm10 -t 10 $GENOME $INDIR/consensus.fasta | \
 samtools sort -@ 5 -T $OUTDIR/male.assembly.minimap -O BAM \
 >$OUTDIR/male.assembly.minimap.bam
 
 samtools index $OUTDIR/male.assembly.minimap.bam
+
+# also generate paf
+minimap2 -c --MD -x asm10 -t 10 $GENOME $INDIR/consensus.fasta | gzip >$OUTDIR/male.assembly.minimap.paf.gz
