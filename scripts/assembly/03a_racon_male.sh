@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=medaka_male
+#SBATCH --job-name=racon_male
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 12
@@ -25,6 +25,7 @@ MAP=../../results/mapped_reads/male.minimap.sam
 DRAFT=../../results/shasta_male_v0.7.0/Assembly.fasta
 
 OUTDIR=../../results/shasta_male_v0.7.0/racon_consensus
+mkdir -p $OUTDIR
 
 # run racon
 racon -t 12 $RAW $MAP $DRAFT >$OUTDIR/racon.fasta
