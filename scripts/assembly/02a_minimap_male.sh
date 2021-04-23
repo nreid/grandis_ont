@@ -25,6 +25,6 @@ mkdir -p $OUTDIR
 # run
 minimap2 -ax map-ont --MD -t 24 $GENOME $FASTQ >$OUTDIR/male.minimap.sam
 
-samtools sort -@ 5 -T $OUTDIR/female.minimap -O BAM $OUTDIR/male.minimap.sam >$OUTDIR/male.minimap.bam
+samtools sort -@ 5 -T $OUTDIR/male.minimap -O BAM $OUTDIR/male.minimap.sam >$OUTDIR/male.minimap.bam
 
 samtools index $OUTDIR/male.minimap.bam
