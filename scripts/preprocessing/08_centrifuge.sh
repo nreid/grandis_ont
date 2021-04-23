@@ -22,7 +22,8 @@ module load centrifuge/1.0.4-beta
 MFASTA=../../results/fastas/male.fasta
 FFASTA=../../results/fastas/female.fasta
 
-OUTDIR=../../resuts/centrifuge
+OUTDIR=../../results/centrifuge
+mkdir -p $OUTDIR
 
 centrifuge -f \
         -x /isg/shared/databases/centrifuge/b+a+v+h/p_compressed+h+v \

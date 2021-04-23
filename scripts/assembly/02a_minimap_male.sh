@@ -14,7 +14,7 @@
 
 module load minimap2/2.17
 
-GENOME=../../results/shasta_male_himem2/Assembly.fasta
+GENOME=../../results/shasta_male_v0.7.0/Assembly.fasta
 FASTQ=../../results/fastqs/male.fastq.gz
 
 OUTDIR=../../results/mapped_reads
