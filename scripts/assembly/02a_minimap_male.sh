@@ -11,20 +11,20 @@
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
 
-
+# load software
 module load minimap2/2.17
+module load samtools/1.10
 
+# input/output
 GENOME=../../results/shasta_male_v0.7.0/Assembly.fasta
 FASTQ=../../results/fastqs/male.fastq.gz
 
 OUTDIR=../../results/mapped_reads
 mkdir -p $OUTDIR
 
-OUTFILE=male.sam
+# run
+minimap2 -ax map-ont --MD -t 24 $GENOME $FASTQ >$OUTDIR/male.minimap.sam
 
-minimap2 \
--ax map-ont \
--t 24 \
-$GENOME \
-$FASTQ >$OUTDIR/$OUTFILE
+samtools sort -@ 5 -T $OUTDIR/female.minimap -O BAM $OUTDIR/male.minimap.sam >$OUTDIR/male.minimap.bam
 
+samtools index $OUTDIR/male.minimap.bam
