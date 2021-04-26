@@ -16,7 +16,7 @@ module load minimap2/2.17
 module load samtools/1.10
 
 # input/output
-GENOME=../../results/shasta_male_v0.7.0/Assembly.fasta
+GENOME=../../results/shasta_male_v0.7.0/medaka_racon_consensus/consensus.fasta
 FASTQ=../../results/fastqs/male.fastq.gz
 
 OUTDIR=../../results/mapped_reads
