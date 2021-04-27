@@ -16,7 +16,7 @@ date
 
 # load software
 module load purge_haplotigs/1.0
-
+module load R/4.0.3
 # input/output
 OUTDIR=../../results/male_purgehaplotigs
 mkdir -p $OUTDIR
