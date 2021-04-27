@@ -28,4 +28,4 @@ BAM=../mapped_reads/male.minimap.bam
 GENOME=../shasta_male_v0.7.0/medaka_racon_consensus/consensus.fasta
 
 ## purge_haplotigs  readhist  -b aligned.bam  -g genome.fasta  [ -t threads ]
-purge_haplotigs readhist -b $BAM -g ${ref} -t 16
+purge_haplotigs readhist -b $BAM -g $GENOME -t 16
