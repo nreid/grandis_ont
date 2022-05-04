@@ -204,13 +204,14 @@ process repeatmodeler_db {
 
 process repeatmodeler_model {
 
+    publishDir "${params.outdir}/RepeatModeler", mode:'copy'
     cache 'lenient'
 
     input:
     path rep_db
     
     output:
-    path ""
+    path "RM*"
 
     script:
     """
